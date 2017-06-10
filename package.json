@@ -1,0 +1,17 @@
+{
+  "name": "gulp-sass-compiler",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-image": "^2.8.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-sass": "^3.1.0",
+    "jshint": "^2.9.4"
+  }
+}
