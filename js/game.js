@@ -68,7 +68,10 @@ function setGameElements() {
             newGameElem.style.display = 'block';
             pickElem.style.display = 'none';
             resultsElem.style.display = 'block';
-            break;
+            playerPickElem.innerText = "Player selection";
+            computerPickElem.innerText = "Computer selection";
+            playerResultElem.innerText = "Player Score";
+            computerResultElem.innerText = "Computer Score";
         case STATE_NOT_STARTED:
         default:
             newGameElem.style.display = 'block';
@@ -113,7 +116,7 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
 
-    // user wins
+        // user wins
     } else {
         playerResultElem.innerHTML = "Win!";
         player.score++;
