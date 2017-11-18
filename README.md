@@ -1,15 +1,15 @@
 # Rock Paper Scissors
 
-## Rules
+## rules
 
 * Rock beats scissors
-* Scisors beats paper
-* Paper beats Rock
+* Scissors beats paper
+* Paper beats rock
 
 ## get started
 
 1. Install gulp globally `npm install -g gulp`
-2. clone or download repository
+2. Clone or download repository
 3. `npm install`
 4. `npm start`
 5. `gulp sass`
@@ -17,4 +17,4 @@
 
 ## live demo
 
-[Rock Paper Scisors](https://dodi-dodi.github.io/rock-paper-scissors/)
+[Rock Paper Scissors](https://dodi-dodi.github.io/rock-paper-scissors/)
