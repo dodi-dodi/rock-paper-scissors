@@ -1,5 +1,5 @@
 // set DOM handlers
-var newGameBtn = document.getElementById('js-newGameButton'),
+let newGameBtn = document.getElementById('js-newGameButton'),
     newGameElem = document.getElementById('js-newGameElement'),
 
     pickRock = document.getElementById('js-playerPick_rock'),
@@ -19,7 +19,7 @@ var newGameBtn = document.getElementById('js-newGameButton'),
     computerResultElem = document.getElementById('js-computerResult');
 
 // set event listeners
-newGameBtn.addEventListener('click', function () {
+newGameBtn.addEventListener('click', () => {
     player.name = prompt('Please enter your name', 'imię gracza');
     if (player.name) {
         player.score = 0;
@@ -33,12 +33,12 @@ newGameBtn.addEventListener('click', function () {
         playerNameElem.innerHTML = player.name;
     }
 });
-pickRock.addEventListener('click', function() { pick(ROCK) });
-pickPaper.addEventListener('click', function() { pick(PAPER) });
-pickScissors.addEventListener('click', function() { pick(SCISSORS) });
+pickRock.addEventListener('click', () => pick(ROCK));
+pickPaper.addEventListener('click', () => pick(PAPER));
+pickScissors.addEventListener('click', () => pick(SCISSORS));
 
 // set constant values
-var STATE_STARTED = 'started',
+let STATE_STARTED = 'started',
     STATE_NOT_STARTED = 'not started',
     STATE_ENDED = 'ended',
 
@@ -49,7 +49,7 @@ var STATE_STARTED = 'started',
     POSSIBLE_PICKS = [ROCK, PAPER, SCISSORS];
 
 // set game values
-var gameState = STATE_NOT_STARTED,
+let gameState = STATE_NOT_STARTED,
     player = {name: '', score: 0},
     computer = {name: 'computer', score: 0};
 
@@ -57,6 +57,7 @@ var gameState = STATE_NOT_STARTED,
  * Based on game state set DOM elements.
  */
 function setGameElements() {
+    // noinspection FallThroughInSwitchStatementJS
     switch(gameState) {
         case STATE_STARTED:
             newGameElem.style.display = 'none';
@@ -86,7 +87,7 @@ setGameElements();
  * @param playerPick One of possible picks
  */
 function pick(playerPick) {
-    var computerPick = POSSIBLE_PICKS[Math.floor(Math.random() * 3)];
+    let computerPick = POSSIBLE_PICKS[Math.floor(Math.random() * 3)];
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
@@ -126,7 +127,7 @@ function checkRoundWinner(playerPick, computerPick) {
 
     // check if max score has been reached and game should end
     if (computer.score >= MAX_SCORE || player.score >= MAX_SCORE) {
-        var winnerIs;
+        let winnerIs;
 
         if (computer.score >= MAX_SCORE) {
             winnerIs = 'computer';
@@ -138,9 +139,7 @@ function checkRoundWinner(playerPick, computerPick) {
         setGameElements();
 
         // alert in timeout for non blocking DOM redraw.
-        setTimeout(function () {
-            alert(winnerIs + ' won!');
-        }, 1)
+        setTimeout(() => alert(winnerIs + ' won!'), 1)
     }
 }
 
